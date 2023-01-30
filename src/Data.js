@@ -25,7 +25,7 @@ const Data = [
     },
     {
         id: 3,
-        rname: "La Milano Pizzeria",
+        rname: "Paratha",
         imgdata: "https://b.zmtcdn.com/data/pictures/chains/1/19708611/10f90d4a69678d98662514d173b29665_o2_featured_v2.jpg",
         address: "Pizza, Fast Food, Pasta",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
@@ -37,7 +37,7 @@ const Data = [
     },
     {
         id: 4,
-        rname: "Momoman",
+        rname: "Momos",
         imgdata: "https://b.zmtcdn.com/data/pictures/chains/1/113401/59f29399060caefcc575d59dc9402ce8_o2_featured_v2.jpg",
         address: "Momos",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
@@ -73,7 +73,7 @@ const Data = [
     },
     {
         id: 7,
-        rname: "Hocco Eatery",
+        rname: "Chhole Bhature",
         imgdata: "https://b.zmtcdn.com/data/pictures/chains/5/110155/811c01a5430d50d3260f77917da99e12_o2_featured_v2.jpg",
         address: "North Indian, Fast Food",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
@@ -97,7 +97,7 @@ const Data = [
     },
     {
         id: 9,
-        rname: "HL Frankie",
+        rname: "Dosa",
         imgdata: "https://b.zmtcdn.com/data/pictures/7/19639627/94c0a4cf15c02d3982d154e2c5dd8cbb_o2_featured_v2.jpg",
         address: "Burger, Sandwich, Fast Food",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",

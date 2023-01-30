@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import "./Mix.css"
 
+
 const Login = () => {
 
     const [passShow, setPassShow] = useState(false);
@@ -12,7 +13,7 @@ const Login = () => {
         password: "",
     });
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const setVal = (e) => {
         // console.log(e.target.value);
@@ -67,7 +68,7 @@ const Login = () => {
 
             if (res.status === 201) {
                 localStorage.setItem("usersdatatoken", res.result.token);
-                history("/main")
+                navigate("/Section")
                 setInpval({ ...inpval, email: "", password: "" });
             }
         }

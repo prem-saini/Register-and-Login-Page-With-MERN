@@ -4,7 +4,13 @@ import Header from './component/Header';
 import Login from './component/Login';
 import Register from './component/Register';
 import { Routes, Route } from "react-router-dom"
-import Main from './component/Main';
+
+import NewItem from './component/NewItem';
+import Section from './component/Section';
+import Order from './component/Order';
+import Thankyou from './component/Thankyou';
+import Footer from './component/Footer';
+
 
 
 function App() {
@@ -14,10 +20,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/main' element={<Main />} />
+
+
+        <Route path="/Section" element={<Section />} />
+        <Route path='/newitem' element={<NewItem />} />
+        <Route path="/order" element={<Order />} />
+        <Route path='/Thankyou' element={<Thankyou />} />
+
 
 
       </Routes>
+
     </>
   );
 }

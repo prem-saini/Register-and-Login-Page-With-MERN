@@ -32,6 +32,15 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
+    // phone: {
+    //     type: Number,
+    //     minlength: 10,
+    //     required: true
+    // },
+    // adress: {
+    //     type: String,
+
+    // },
     tokens: [
         {
             token: {
