@@ -67,7 +67,11 @@ const Login = () => {
             // console.log(res);
 
             if (res.status === 201) {
+                toast.success("You Login  Successfully done 😃!", {
+                    position: "top-center"
+                });
                 localStorage.setItem("usersdatatoken", res.result.token);
+
                 navigate("/Section")
                 setInpval({ ...inpval, email: "", password: "" });
             }
@@ -98,10 +102,10 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <button className='btn' onClick={loginuser}>Login</button>
+                        <button className='btn' onClick={loginuser}>Login</button>  <ToastContainer />
                         <p>Don't have an Account? <NavLink to="/register">Sign Up</NavLink> </p>
                     </form>
-                    <ToastContainer />
+
                 </div>
             </section>
         </>

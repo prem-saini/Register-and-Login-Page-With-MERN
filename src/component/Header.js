@@ -35,9 +35,9 @@ function Header() {
         total();
     }, [total])
 
-    const hello = () => {
-        navigate('/newitem')
-    }
+    // const hello = () => {
+    //     navigate('/newitem')
+    // }
 
     return (
         <>
@@ -64,7 +64,7 @@ function Header() {
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Add Item</h5>
+                                            <p class="modal-title " style={{ fontSize: '18px', fontWeight: "700", color: 'teal', textAlign: 'center' }} id="exampleModalLabel">Add Item</p>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
 
@@ -73,8 +73,8 @@ function Header() {
 
                                             <thead>
                                                 <tr>
-                                                    <th style={{ color: 'black' }}>Photo</th>
-                                                    <th style={{ color: 'black' }}>Restaurant</th>
+                                                    <th style={{ fontSize: '18px', fontWeight: "700", color: 'black', }}>Photo</th>
+                                                    <th style={{ fontSize: '18px', fontWeight: "700", color: 'black', }}>Restaurant</th>
                                                 </tr>
                                             </thead>
 
@@ -87,15 +87,15 @@ function Header() {
                                                                     <td data-bs-dismiss="modal">
                                                                         <Link to="/newitem" state={e}> <img src={e.imgdata} alt="..." style={{ width: "10rem", height: "10rem" }} /></Link></td>
                                                                     <td>
-                                                                        <p>{e.rname}</p>
-                                                                        <p>Price : ₹{e.price * e.qnty}</p>
-                                                                        <p>quantity : {e.qnty}</p>
+                                                                        <p style={{ fontSize: '18px', fontWeight: "700", color: 'black' }}>{e.rname}</p>
+                                                                        <p style={{ fontSize: '18px', fontWeight: "700", color: 'teal' }}>Price : ₹{e.price * e.qnty}</p>
+                                                                        <p style={{ fontSize: '18px', fontWeight: "700", color: 'green' }}>quantity : {e.qnty}</p>
 
 
 
                                                                     </td>
 
-                                                                    <td>
+                                                                    <td >
                                                                         <img src={Delete} alt="..." onClick={() => dlt(e.id)} />
                                                                     </td>
                                                                 </tr>
@@ -107,7 +107,7 @@ function Header() {
                                                         )
                                                     })
                                                 }
-                                                <p className="text-center">Total : ₹{price}</p>
+                                                <p className="text-center mt-3" style={{ fontSize: '18px', fontWeight: "700", color: 'teal' }}>Total : ₹{price}</p>
 
                                             </tbody>
                                         </Table>

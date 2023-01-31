@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+
     email: {
         type: String,
         required: true,
@@ -37,8 +38,14 @@ const userSchema = new mongoose.Schema({
     //     minlength: 10,
     //     required: true
     // },
-    // adress: {
+    // address: {
     //     type: String,
+
+    // },
+    // lastname: {
+    //     type: String,
+    //     required: true,
+    //     trim: true
 
     // },
     tokens: [

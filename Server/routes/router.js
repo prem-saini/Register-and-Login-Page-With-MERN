@@ -99,31 +99,32 @@ router.post("/login", async (req, res) => {
 
 // router.post("/order", async (req, res) => {
 
-//     const { fastname, lastname, email, phone, address } = req.body;
+//     const { fname, lastname, email, phone, address } = req.body;
 
-//     if (!fastname || !email || !phone || !address || !lastname) {
+//     if (!fname || !email || !phone || !address || !lastname) {
 //         res.status(422).json({ error: "fill all the details" })
 //     }
 
 //     try {
 
-//         const preuser = await userdb.findOne({ email: email });
+//         // const preuser = await userdb.findOne({ email: email });
 
-//         if (preuser) {
-//             res.status(422).json({ error: "This Email is Already Exist" })
-//         } else {
-//             const finalUser = new userdb({
-//                 fastname, lastname, email, phone, address
-//             });
+//         // if (preuser) {
+//         //     res.status(422).json({ error: "This Email is Already Exist" })
+//         // } else {
+//         //     const finalUser = new userdb({
+//         //         fastname, lastname, email, phone, address
+//         //     });
+//         // }
 
-//             // here password hasing
+//         // here password hasing
 
-//             const storeData = await finalUser.save();
+//         const storeData = await finalUser.save();
 
-//             // console.log(storeData);
-//             res.status(201).json({ status: 201, storeData })
+//         // console.log(storeData);
+//         res.status(201).json({ status: 201, storeData })
 
-//         }
+//         // }
 //         console.log(res)
 
 //     } catch (error) {

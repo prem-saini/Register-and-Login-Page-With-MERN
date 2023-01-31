@@ -12,9 +12,9 @@ import {
 }
     from 'mdb-react-ui-kit';
 import NewItem from './NewItem';
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
 
@@ -22,7 +22,7 @@ function Order() {
 
     // const navigate = useNavigate()
     const [val, setVal] = useState({
-        fastname: "",
+        fname: "",
         lastname: "",
         email: "",
         phone: "",
@@ -43,15 +43,15 @@ function Order() {
 
     }
 
-    // const adddata = async (e) => {
+    // const userdata = async (e) => {
     //     e.preventDefault();
     //     // alert("prem sain")
 
-    //     const { fastname, lastname, email, phone, address } = val;
+    //     const { fname, lastname, email, phone, address } = val;
 
     //     console.log(val)
 
-    //     if (fastname === "") {
+    //     if (fname === "") {
     //         toast.warning("fname is required!", {
     //             position: "top-center"
     //         });
@@ -90,7 +90,7 @@ function Order() {
     //                 "Content-Type": "application/json"
     //             },
     //             body: JSON.stringify({
-    //                 val
+    //                 fname, lastname, email, phone, address
     //             })
     //         });
 
@@ -104,14 +104,14 @@ function Order() {
 
     //             navigate("/Thankyou")
 
-    //             setVal({ ...val, fastname: "", lastname: "", email: "", phone: "", address: "" });
+    //             setVal({ ...val, fname: "", lastname: "", email: "", phone: "", address: "" });
     //         }
     //         else {
-    //             alert("prem")
+    //             // alert("prem")
     //         }
     //     }
     // }
-    const adddata = () => {
+    const userdata = () => {
 
     }
 
@@ -131,7 +131,7 @@ function Order() {
                             <MDBRow>
 
                                 <MDBCol md='6' style={{ color: 'blue' }}>
-                                    <MDBInput wrapperClass='mb-4' label='First Name' size='lg' id='form1' type='text' name="fastname" onChange={setVale} value={val.fastname} />
+                                    <MDBInput wrapperClass='mb-4' label='First Name' size='lg' id='form1' type='text' name="fname" onChange={setVale} value={val.fname} />
                                 </MDBCol>
 
                                 <MDBCol md='6' style={{ color: 'blue' }}>
@@ -161,7 +161,8 @@ function Order() {
 
 
                             {/* <MDBBtn className='mb-4' size='lg'>Confirm Order</MDBBtn> */}
-                            <button className='btn_confirm_order' onClick={adddata}>Confirm Order</button>
+                            <button className='btn_confirm_order' onClick={userdata}>Order Confirm</button>
+                            {/* <ToastContainer /> */}
 
                         </MDBCardBody>
                     </MDBCard>
