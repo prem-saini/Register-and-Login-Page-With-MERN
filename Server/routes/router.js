@@ -6,6 +6,7 @@
 const express = require("express");
 const router = new express.Router();
 const userdb = require("../model/userSchema");
+const userdata = require("../model/useSchema")
 var bcrypt = require("bcryptjs")
 // const authenticate = require("../middleware/authenticate");
 
@@ -97,42 +98,42 @@ router.post("/login", async (req, res) => {
 });
 
 
-// router.post("/order", async (req, res) => {
+router.post("/order", async (req, res) => {
 
-//     const { fname, lastname, email, phone, address } = req.body;
+    const { fname, lastname, email, phone, address } = req.body;
 
-//     if (!fname || !email || !phone || !address || !lastname) {
-//         res.status(422).json({ error: "fill all the details" })
-//     }
+    // if (!fname || !email || !phone || !address || !lastname) {
+    //     res.status(422).json({ error: "fill all the details" })
+    // }
 
-//     try {
+    try {
 
-//         // const preuser = await userdb.findOne({ email: email });
+        const preuser = await userdata.findOne({ email: email });
 
-//         // if (preuser) {
-//         //     res.status(422).json({ error: "This Email is Already Exist" })
-//         // } else {
-//         //     const finalUser = new userdb({
-//         //         fastname, lastname, email, phone, address
-//         //     });
-//         // }
+        if (preuser) {
+            res.status(422).json({ error: "This Email is Already Exist" })
 
-//         // here password hasing
+        }
+        const final = new userdata({
+            fname, lastname, email, phone, address
+        });
 
-//         const storeData = await finalUser.save();
+        // here password hasing
 
-//         // console.log(storeData);
-//         res.status(201).json({ status: 201, storeData })
+        const store = await final.save();
 
-//         // }
-//         console.log(res)
+        // console.log(storeData);
+        res.status(201).json({ status: 201, store })
 
-//     } catch (error) {
-//         res.status(422).json(error);
-//         console.log("catch block error");
-//     }
+        // }
+        console.log(res)
 
-// });
+    } catch (error) {
+        res.status(422).send(error);
+        console.log("catch block error", error);
+    }
+
+});
 
 
 module.exports = router;

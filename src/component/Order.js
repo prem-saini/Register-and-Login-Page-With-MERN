@@ -12,15 +12,15 @@ import {
 }
     from 'mdb-react-ui-kit';
 import NewItem from './NewItem';
-// import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
 
 function Order() {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [val, setVal] = useState({
         fname: "",
         lastname: "",
@@ -43,77 +43,38 @@ function Order() {
 
     }
 
-    // const userdata = async (e) => {
-    //     e.preventDefault();
-    //     // alert("prem sain")
 
-    //     const { fname, lastname, email, phone, address } = val;
+    const addinpdata = async (e) => {
+        e.preventDefault();
 
-    //     console.log(val)
+        const { fname, email, lastname, address, phone } = val;
 
-    //     if (fname === "") {
-    //         toast.warning("fname is required!", {
-    //             position: "top-center"
-    //         });
-    //     } else if (email === "") {
-    //         toast.error("email is required!", {
-    //             position: "top-center"
-    //         });
-    //     } else if (!email.includes("@")) {
-    //         toast.warning("includes @ in your email!", {
-    //             position: "top-center"
-    //         });
-    //     } else if (phone === "") {
-    //         toast.error("phone is required!", {
-    //             position: "top-center"
-    //         });
-    //     } else if (phone.length <= 10) {
-    //         toast.error("phone number must be 10 char!", {
-    //             position: "top-center"
-    //         });
-    //     } else if (address === "") {
-    //         toast.error("address is required!", {
-    //             position: "top-center"
-    //         });
-    //     }
-    //     else if (lastname === "") {
-    //         toast.error("lastname is required!", {
-    //             position: "top-center"
-    //         });
-    //     } else {
-    //         // console.log("user registration succesfully done");
+        const res = await fetch("/order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fname, email, lastname, address, phone
+            })
+        });
 
-    //         // console.log(data)
-    //         const data = await fetch("/order", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json"
-    //             },
-    //             body: JSON.stringify({
-    //                 fname, lastname, email, phone, address
-    //             })
-    //         });
+        const data = await res.json();
+        console.log(data);
 
-    //         const res = await data.json();
-    //         console.log(res.status);
+        if (res.status === 201 || !data) {
+            navigate("/Thankyou")
+            // setUdata(data)
+            toast.success("Your order successfully done")
+            console.log("data added");
 
-    //         if (res.status === 201) {
-    //             toast.success("Registration Successfully done 😃!", {
-    //                 position: "top-center"
-    //             });
+        } else {
 
-    //             navigate("/Thankyou")
-
-    //             setVal({ ...val, fname: "", lastname: "", email: "", phone: "", address: "" });
-    //         }
-    //         else {
-    //             // alert("prem")
-    //         }
-    //     }
-    // }
-    const userdata = () => {
-
+            console.log("error ");
+            alert("error");
+        }
     }
+
 
     return (
 
@@ -161,8 +122,8 @@ function Order() {
 
 
                             {/* <MDBBtn className='mb-4' size='lg'>Confirm Order</MDBBtn> */}
-                            <button className='btn_confirm_order' onClick={userdata}>Order Confirm</button>
-                            {/* <ToastContainer /> */}
+                            <button className='btn_confirm_order' onClick={addinpdata}>Order Confirm</button>
+                            <ToastContainer />
 
                         </MDBCardBody>
                     </MDBCard>
